@@ -1,0 +1,43 @@
+<!-- <html>
+    <body>
+    <head>
+        <title>Test</title>
+        <script src="https://cdn.jsdelivr.net/npm/web3@latest/dist/web3.min.js"></script>
+        <script src="https://unpkg.com/moralis/dist/moralis.js"></script>
+    </head>
+        <h2>InvestingMadeSimple Login</h2>
+
+        <button onclick="login()" id="login">Meta Mask Login</button>
+        <button id="btn-logout">Logout</button>
+        <div id="display">
+            
+        </div>
+
+        <script>
+            const serverUrl = "https://3saxoghd4wl8.usemoralis.com:2053/server";
+            const appId = "WHTsPUDVT1z88bSj1tqbLUplTD0gbN265eKahRGW";
+            Moralis.start({ serverUrl, appId });
+
+            async function login() {
+                // const user = await Moralis.authenticate()
+                // console.log(user)
+
+                const user = await Moralis.authenticate()
+                document.getElementById('login').innerHTML = user.get('ethAddress')
+                document.getElementById('display').innerHTML = user.get('email')
+            }
+
+            Moralis.onAccountChanged( async (account) => {
+                const confirmed = confirm("Link this address to your account?");
+                if (confirmed) {
+                    await Moralis.link(account);
+                }
+            });
+            
+        </script>
+        
+    </body>
+
+
+
+</html> -->
