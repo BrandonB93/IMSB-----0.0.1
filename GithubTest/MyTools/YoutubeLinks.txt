@@ -1,0 +1,39 @@
+Using a payment splitter smart contract
+
+https://www.youtube.com/watch?v=b5sQt4F8voA
+
+_____________________________________________________
+
+How To Create An Ethereum Savings Account With Solidity Smart Contracts
+
+https://www.youtube.com/watch?v=w3lemj9KkhE
+
+_____________________________________________________
+
+Moralis Syncing and Indexing Smart Contract Events
+
+https://www.youtube.com/watch?v=LMqqxkuo7b0
+
+_____________________________________________________
+
+Interact with Smart Contracts through your website (JS and REACT tutorial)
+
+https://www.youtube.com/watch?v=7TKqLJd_aYI
+
+_____________________________________________________
+
+How to deploy your app with website link
+
+https://www.youtube.com/watch?v=RiH0ADGPleg
+
+_____________________________________________________
+Moralis Admin CLI - Initial Setup [Part 0]
+
+https://www.youtube.com/watch?v=WtAlRwkB12w
+
+_____________________________________________________
+Cloud Functions Explained - Hello World, Multiple Files and IDE Setup
+
+https://www.youtube.com/watch?v=rJ88MPODVRg&t=15s
+
+_____________________________________________________

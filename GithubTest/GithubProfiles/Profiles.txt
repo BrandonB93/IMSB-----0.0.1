@@ -1,0 +1,19 @@
+HashLips
+https://github.com/HashLips
+_____________________________________________________
+Rari Capital
+https://github.com/Rari-Capital
+_____________________________________________________
+ERC20-Token-and-Sale Repo
+
+https://github.com/0xTDF/ERC20-Token-and-Sale
+_____________________________________________________
+OpenZeppelin Official Github
+
+https://github.com/OpenZeppelin
+_____________________________________________________
+Ethereum Boilerplate Github
+
+https://github.com/ethereum-boilerplate/ethereum-boilerplate
+_____________________________________________________
+
