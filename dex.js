@@ -12,6 +12,8 @@ async function init2(){
     }
 }
 
+
+
 async function listAvailableTokens(){
     const result = await Moralis.Plugins.oneInch.getSupportedTokens({
         chain: 'eth', // The blockchain you want to use (eth/bsc/polygon)

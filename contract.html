@@ -1,0 +1,250 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="description" content="" />
+    <meta
+      name="author"
+      content="Mark Otto, Jacob Thornton, and Bootstrap contributors"
+    />
+    <meta name="generator" content="Hugo 0.88.1" />
+    <title>InvestingMadeSimple Vault Bank</title>
+
+    <link
+      rel="canonical"
+      href="https://getbootstrap.com/docs/5.1/examples/sign-in/"
+    />
+    <link href="signin.css" rel="stylesheet" />
+    <link href="style.css" rel="stylesheet" />
+    <link href="./css/bootstrap.min.css" rel="stylesheet" />
+    <script src="https://cdn.jsdelivr.net/npm/web3@latest/dist/web3.min.js"></script>
+    <script src="https://unpkg.com/moralis/dist/moralis.js"></script>
+  </head>
+  <body class="text-center">
+    <main class="form-signin">
+      <img class="mb-4" src="/img/vault.png" alt="" width="150" height="150" />
+      <div>
+        <script>
+            function getAddress(){
+                let rawAddress = Moralis.User.current().get('ethAddress');
+                let firstFive = rawAddress.substring(0, 6);
+                let lastFive = rawAddress.slice(rawAddress.length - 4);
+                let _address = `User: ${firstFive}...${lastFive}`;
+                document.getElementById('userAddress').textContent = _address;
+                console.log("Get Address Function working...")
+    
+}
+        </script>
+
+        <center><h2>InvestingMadeSimple Vault</h2></center>
+      </div>
+      <div>
+        <h5>Please use Meta Mask to Interact With Vault</h5>
+      </div>
+      <div class="accordion-collapse collapse show" aria-labelledby="headingOne" data-bs-parent="#accordionExample">
+        <div>
+            <h2>Dashboard</h2>
+            <p>
+                Welcome to InvestingMadeSimple Vault, Digital 21st Century Banking.
+            </p>
+            <center><button class="btn btn-primary col-md-4" id="btn-vault" onclick="redirect()">Dashboard</button></center>
+          </div>
+          <div>
+            <script>
+              function redirect() {
+                location.replace("./dashboard.html")
+              }
+              </script>
+          </div>
+          <br>
+          <hr>
+      <div class="container text-center">
+        <div></div>
+        <div class="row g-2">
+          <div class="col-6">
+            <div class="p-3 border bg-light">
+                <h3>Hi</h3>
+                <div>
+                    <h3><i>Donate Matic</i></h3>
+                    <button id="btn-donate" class="w-100 btn btn-lg btn-success" type="submit">Donate Matic</button>
+                </div>
+            </div>
+          </div>
+          <div class="col-9">
+            <div class="p-4 border bg-light">
+                <div>
+                    <h3><i>Get My Address</i></h3>
+                    <br>
+                    <hr>
+                    <button id="btn-get-native-balance" class="w-100 btn btn-lg btn-success" type="submit">Transfer Test</button>
+                </div>
+            
+            </div>
+            <!-- //btn-get-transactions -->
+          </div>
+          <div class="col-6">
+            <div class="p-3 border bg-light">
+                <div>
+                    <h5><i>Transfer event</i></h5>
+                    <br>
+                    <hr>
+                    <button id="btn-transfer" class="w-100 btn btn-lg btn-success" type="submit">Transfer Test</button>
+                </div>
+            
+            </div>
+            <!-- //btn-get-transactions -->
+          </div>
+
+          <div class="col-6">
+            <div class="p-3 border bg-light">
+                <div>
+                    <h5><i>View Transactions</i></h5>
+                    <br>
+                    <hr>
+                    <button id="btn-get-transactions" class="w-100 btn btn-lg btn-success" type="submit">Get Transactions</button>
+                </div>
+            
+            </div>
+            <!-- //btn-get-native-balance -->
+          </div>
+          <br>
+          <hr>
+          <div class="col-6">
+            <div class="p-3 border bg-light">
+                <div>
+                    <h5><i>Get Native Balances</i></h5>
+                    <br>
+                    <hr>
+                    <button id="btn-get-native-balance" class="w-100 btn btn-lg btn-success" type="submit">Get Native Balances</button>
+                </div>
+            
+            </div>
+            <!-- //btn-get-native-balance -->
+          </div>
+          <div class="col-6">
+            <div class="p-3 border bg-light">
+                <div>
+                    <h5><i>Get Contract Events</i></h5>
+                    <br>
+                    <hr>
+                    <button id="btn-get-contract-events" class="w-100 btn btn-lg btn-success" type="submit">Get Contract Events</button>
+                </div>
+            
+            </div>
+            <!-- //btn-get-native-balance -->
+          </div>
+          <div>
+            <h3>Grid</h3>
+          </div>
+          <hr>
+          <div class="col-6">
+            <div class="p-3 border bg-light">Custom column padding</div>
+          </div>
+          <div class="col-6">
+            <div class="p-3 border bg-light">Custom column padding</div>
+          </div>
+        </div>
+        <br>
+        <hr>
+        <div>
+            <h3>Hello world</h3>
+        </div>
+        <div class="container overflow-hidden text-center">
+            <div class="row gx-5">
+              <div class="col">
+               <div class="p-3 border bg-light">Custom column padding</div>
+              </div>
+              <div class="col">
+                <div class="p-3 border bg-light">Custom column padding</div>
+              </div>
+            </div>
+          </div>   
+      </div>
+      <br>
+      <hr>
+      <div>
+        <div>
+            <h2>InvestingMadeSimple Token Information Dashboard</h2>
+            <br>
+            <h4><i>Discover the Ability of the power of InvestingMadeSimple Token</i></h4>
+        </div>
+        <!-- Get Token Price -->
+        <div class="accordion-item">
+            <h2 class="accordion-header" id="getTokenPrice-header">
+              <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapse-getTokenPrice" aria-expanded="false" aria-controls="collapse-getTokenPrice">
+                Get Token Price
+              </button>
+            </h2>
+            <div id="collapse-getTokenPrice" class="accordion-collapse collapse" aria-labelledby="getTokenPrice-header" data-bs-parent="#accordian-web3apiToken">
+              <div class="accordion-body">
+                <div class="my-4">
+
+                  <h4>https://tokenlists.org/token-list?url=tokenlist.aave.eth</h4>
+                </div>
+                <div class="my-4">
+                  <p>DAI: 0x6B175474E89094C44Da98b954EedeAC495271d0F</p>
+                  <p>USDC: 0xA0b86991c6218b36c1d19D4a2e9Eb0cE3606eB48</p>
+                  <p>USDT: 0xdAC17F958D2ee523a2206206994597C13D831ec7</p>
+                  <p>LINK: 0x514910771AF9Ca656af840dff83E8264EcF986CA</p>
+                  <p>AAVE: 0x7Fc66500c84A76Ad7e9c93437bFc5Ac33E2DDaE9</p>
+                </div>
+                <div id="getTokenPrice-content" class="table-responsive"></div>
+                <div class="col-md-6 offset-md-3 my-3 container">
+                  <input type="text" class="form-control" placeholder="Token Contract Address (required)" id="getTokenPrice-address">
+                </div>
+                <div class="the-buttons my-3">
+                  <button class="btn btn-primary col-md-4" id="btn_getTokenPrice">Get NFT Transfers</button>
+                </div>
+                <div id="getTokenPrice_content" class="table-responsive text-center container"></div>
+              </div>
+            </div>
+          </div>
+        <!-- Get Token Allowance  -->
+        <div class="accordion-item">
+            <h2 class="accordion-header" id="">
+              <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapse-getTokenAllowance" aria-expanded="false" aria-controls="collapse-getTokenAllowance">
+                Get Token Allowance
+              </button>
+            </h2>
+            <div id="collapse-getTokenAllowance" class="accordion-collapse collapse" aria-labelledby="getTokenAllowance-header" data-bs-parent="#accordian-web3apiToken">
+              <div class="accordion-body">
+                <div id="getTokenAllowance-content" class="table-responsive"></div>
+                <div class="col-md-6 offset-md-3 my-3 container">
+                  <code class="h5">
+                    <p>This will require a smart contract (address) that has an owner (address) approve another address (address) to receive some tokens in the smart contract. So once the spender is approved, this function will work.</p>
+                    // Get token allowance on ETH
+                      const options = { <br>
+                        chain: "eth", <br>
+                        owner_address: "0xe...556", <br>
+                        spender_address: "0xe...556", <br>
+                        address: "0xe...556" <br>
+                      }; <br>
+                    const allowance = await Moralis.Web3API.token.getTokenAllowance(options);
+                  </code>
+                </div>
+              </div>
+            </div>
+          </div>
+      </div>
+    </main>
+    <script src="donation.js"></script>
+  </body>
+</html>
+
+<!-- <div class="container text-center">
+  <div class="row g-2">
+    <div class="col-6">
+      <div class="p-3 border bg-light">Custom column padding</div>
+    </div>
+    <div class="col-6">
+      <div class="p-3 border bg-light">Custom column padding</div>
+    </div>
+    <div class="col-6">
+      <div class="p-3 border bg-light">Custom column padding</div>
+    </div>
+    <div class="col-6">
+      <div class="p-3 border bg-light">Custom column padding</div>
+    </div>
+  </div>
+</div> -->

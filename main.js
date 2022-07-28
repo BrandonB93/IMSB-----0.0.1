@@ -1,14 +1,15 @@
-console.log("Hello world");
+console.log("#1 - Main Javascript Page working...");
 
 (async function(){
     const serverUrl = "https://3saxoghd4wl8.usemoralis.com:2053/server";
     const appId = "WHTsPUDVT1z88bSj1tqbLUplTD0gbN265eKahRGW";
     Moralis.start({ serverUrl, appId });
+    console.log("Server Connecting...")
 })();
 // -----------CONFIG--------------
 // Have you renamed the index.html or dashboard.html file? 
 // If yes, update these filenames:
-const loginPage = `signin.html`;
+const loginPage = `sign-up.html`;
 const dashboard = `dashboard.html`;
 // --------------------------------
 
@@ -19,7 +20,7 @@ const dashboard = `dashboard.html`;
 
     if (Moralis.User.current() == null && window.location.pathname.endsWith(dashboard)) {
         document.querySelector('body').style.display = 'none';
-        window.location.href = "signin.html";
+        window.location.href = "sign-up.html";
     }
     if (Moralis.User.current() != null && window.location.pathname.endsWith(loginPage)) {
         window.location.href = "dashboard.html";
@@ -27,16 +28,71 @@ const dashboard = `dashboard.html`;
     }
 })();
 
+/* Authentication code */
+async function login() {
+    let user = Moralis.User.current();
+    if (!user) {
+      user = await Moralis.authenticate({
+        signingMessage: "Logging into InvestingMadeSimple",
+      })
+        .then(function (user) {
+          console.log("logged in user:", user);
+          console.log(user.get("ethAddress"));
+          console.log(user);
+          console.log("user");
+        })
+        .catch(function (error) {
+          console.log(error);
+        });
+    }
+  }
+
+signup = async (email, password, phone) => {
+    const user = new Moralis.User();
+    user.set("username", email);
+    user.set("password", password);
+    user.set("email", email);
+    user.set("phone", phone);
+    try {
+        await user.signUp();
+        console.log("user");
+        console.log(user);
+        console.log(email);
+        console.log(phone);
+    } catch (error) {
+    // Show the error message somewhere and let the user try again.
+    alert("Error: " + error.code + " " + error.message);
+    }
+}
+
+signup = async (email, password, phone) => {
+    const user = new Moralis.User();
+    
+    try {
+        await user.signUp();
+        console.log("user");
+        console.log(user);
+        console.log(email);
+        console.log(phone);
+    } catch (error) {
+    // Show the error message somewhere and let the user try again.
+    alert("Error: " + error.code + " " + error.message);
+    }
+}
+
+
 // Global Variables
 let _ethAddress;
-let network = 'rinkeby';
+let network = 'BSC Testnet';
+console.log(network);
 
-
+defineNewMonster =
 
 // Initialising OneInch
 (async function(){
     await Moralis.initPlugins();
     dex = Moralis.Plugins.oneInch;
+    console.log("#2 - Initialising OneInch Exchange...");
     
 })();
 
@@ -63,20 +119,22 @@ let network = 'rinkeby';
 //   };
   
 //   const options = {
-//     chain: "eth",
+//     chain: "BSC Testnet",
 //     address: "0xdAC17F958D2ee523a2206206994597C13D831ec7",
 //     topic: "0xddf252ad1be2c89b69c2b068fc378daa952ba7f163c4a11628f55a4df523b3ef",
 //     limit: "3",
 //     abi: ABI,
 //   };
 //   const events = await Moralis.Web3API.native.getContractEvents(options);
+//   console.log("Smart Contract Function initialized.");
 
 
 
 
 
-// DISPLAY NETWORK and USER ADDRESS
+/// DISPLAY NETWORK and USER ADDRESS
 (async function (){
+    console.log("#3 - Display Network Function Working...");
     if (Moralis.User.current() != null && window.location.pathname.endsWith(dashboard)) {
             getNetwork();
             getAddress();
@@ -103,6 +161,7 @@ function getAddress(){
     let lastFive = rawAddress.slice(rawAddress.length - 4);
     let _address = `User: ${firstFive}...${lastFive}`;
     document.getElementById('userAddress').textContent = _address;
+    
 }
 
 function returnChainId(chainId){
@@ -118,36 +177,47 @@ function returnChainId(chainId){
         case 1337: return "Local Dev Chain";
         case 80001: return "Mumbai";
       }
+      console.log("Chain ID Function Initialized.");
 }
 
-login = async () => {
-    await Moralis.Web3.authenticate()
-    .then(async function (user) {
-        let _email = document.getElementById('user-email').value;
-        let _password = document.getElementById('user-password').value;
-        if(_password != '' || _email != ''){
-            if(_password != ''){user.set("password", _password);}
-            if(_email != ''){user.set("email", _email);}
-            await user.save();
-        }
-        window.location.href = "dashboard.html";
-    })
-}
 
-logout = async () => {
+
+
+// // PART 4: CONTRACTS INTERGRATIONS
+// donate = async () => {
+//     user = await Moralis.authenticate({ signingMessage: "Contract Authentication" });
+//     console.log("Contract code ran");
+//     var contract = {
+//         contractAddress:"0x356d2E7a0d592bAd95E86d19479c37cfdBb68Ab9",
+//         functionName: "newDonation",
+//         abi:[{"inputs":[{"internalType":"string","name":"note","type":"string"}],"name":"newDonation","outputs":[],"stateMutability":"payable","type":"function"}],
+//         params:{
+//          note:"Thanks for your work"
+//         },
+//         msgValue: Moralis.Units.ETH(0.1)
+//     }
+//     console.log("Your Donation has been sent Successfully");
+//     await Moralis.executeFunction(contract);
+//     console.log("Smart Contract Intergration Testing Running....");
+
+// }
+
+logOut = async () => {
     await Moralis.User.logOut();
     window.location.href = "signin.html";
+    console.log("Log out Function Running...");
 }
 
 renderContent = (element) => {
     let elements = ['#transferETH','#transferERC20','#transferNFTs',
     "#transactionsSection", "#balancesSection", "#nftSection", 
-    '#portfolioTracker', '#buyCrypto', '#swapTokens', '#webhooks', '#web3apiTokenSection']
+    '#portfolioTracker', '#donation', '#buyCrypto', '#swapTokens', '#webhooks', '#web3apiTokenSection']
     elements.forEach(e => {
         hideContent(e);
     })
     showContent(element);
     console.log(element);
+    console.log("Render Content Function Working...");
 }
 
 hideContent = (el) => {
@@ -181,6 +251,7 @@ fixURL = (url) => {
     else {
         return url + "?format=json"
     }
+    
 }
 
 clearContent = (id) => {
@@ -191,7 +262,8 @@ clearContent = (id) => {
 getERC20Metadata = async () => {
     let _symbol = document.querySelector('#ERC20MetadataSymbol').value;
     let _chain = document.querySelector('#ERC20MetadataChain').value;
-    let tokens = await Moralis.Web3API.account.getTokenBalances({chain:_chain})
+    let tokens = await Moralis.Web3API.account.getTokenBalances({chain:_chain});
+    console.log("Get ERC20 Metadata Function Running...");
     tokens.forEach((e,i) => {
         if(e.symbol == _symbol){
             document.querySelector('#ERC20TransferContract').value = e.token_address;
@@ -201,7 +273,7 @@ getERC20Metadata = async () => {
 }
 
 getScanTx = (type, id) => {
-    
+    console.log("Get Transaction Scan Running...");
     switch (id) {
         case 1: return `https://etherscan.io/${type}/`;
         case 3: return `https://ropsten.etherscan.io/${type}/`;
@@ -272,7 +344,6 @@ getNativeBalances = async () => {
     const bscBalance = await Moralis.Web3API.account.getNativeBalance({ chain: "bsc" });
 
     
-    
     // case 1: return "Eth";
     // case 3: return "Ropsten";
     // case 4: return "Rinkeby";
@@ -283,6 +354,16 @@ getNativeBalances = async () => {
     // case 137: return "Matic";
     // case 1337: return "Local Dev Chain";
     // case 80001: return "Mumbai";
+
+    // let content = document.querySelector('#investingVault').innerHTML = `
+
+    // <div>
+    //     <h2>Test</h2>
+    // </div>
+    
+    // `
+
+
 
     let content = document.querySelector('#userBalances').innerHTML = `
     <table class="table">
@@ -548,7 +629,6 @@ tokenBalanceLoop = (tokens) => {
 
     tokens.forEach((e,i) => {
             let content = `
-
             <tr>
             <td>Token: ${e.name}</td>
             <td>Symbol: ${e.symbol}</td>
@@ -556,7 +636,6 @@ tokenBalanceLoop = (tokens) => {
             <td>Decimals: ${e.decimals}</td>
             <td>Contract Address: ${e.token_address}</td>
             </tr>
-
             `
             tokenBalanceContent += content
     });
@@ -578,7 +657,6 @@ displayAlerts = () => renderContent('#webhooks')
 
 // PART 2: TRANSFER FUNCTIONS
 transferETH = async () => {
-    await Moralis.Web3.authenticate()
     let _amount = String(document.querySelector('#amountOfETH').value);
     let _address = document.querySelector('#addressToReceive').value;
 
@@ -588,7 +666,6 @@ transferETH = async () => {
 }
 
 transferERC20 = async () => {
-    await Moralis.Web3.authenticate()
     let _amount = String(document.querySelector('#ERC20TransferAmount').value);
     let _decimals = String(document.querySelector('#ERC20TransferDecimals').value);
     let _address = String(document.querySelector('#ERC20TransferAddress').value);
@@ -648,6 +725,14 @@ async function buycrypto(){
     // document.getElementById('fiat-iframe').src = result.data;
 }
 
+// INVESTING VAULT SMART CONTRACT INTERGRATION
+
+
+// async function investingvault(){
+//     const address = Moralis.User.current().get('ethAddress');
+// }
+
+
 function shortAddress(address){
     let firstFive = address.substring(0, 10);
     let lastFive = address.slice(address.length - 6);
@@ -677,23 +762,26 @@ function ShowHidePass() {
   }
 
 
+
 if(window.location.pathname.endsWith(loginPage)){
     document.querySelector('#the-eye').onclick = function(){ShowHidePass()};
 }
 // DASHBOARD LISTENERS
 if (window.location.pathname.endsWith(dashboard)){
-    document.querySelector('#btn-logout').onclick = logout;
+    
 
     // Side Menu Part 1
     document.querySelector('#get-transactions-link').onclick = displayTransactions;
     document.querySelector('#btn-get-transactions').onclick = getTransactions;
     document.querySelector('#get-balances-link').onclick = displayBalances;
     document.querySelector('#btn-get-native-balances').onclick = getNativeBalances;
+    // document.querySelector('#btn-donate').onclick = getDonationExample;
+
     document.querySelector('#btn-get-erc20-balances').onclick = getERC20Balances;
     document.querySelector('#ERC20MetadataSearch').onclick = getERC20Metadata;
     document.querySelector('#get-nfts-link').onclick = displayNFTs;
     document.querySelector('#btn-get-nfts').onclick = getNFTs;
-
+    // document.getElementById('btn-donate').onclick = donate;
     document.querySelector('#get-web3apiTokenSection').onclick = displayWeb3API;
 
     // "Get Address" will need to be refactored
@@ -717,6 +805,7 @@ if (window.location.pathname.endsWith(dashboard)){
     
     // Side Menu Part 3
     document.querySelector('#portfolio-tracker').onclick = displayPortfolioTracker;
+    document.querySelector('#donation').onclick = displaydonation;
     document.querySelector('#buy-crypto').onclick = displayBuyCrypto;
     document.querySelector('#swap-tokens').onclick = displaySwapTokens;
     document.querySelector('#webhook-alerts').onclick = displayAlerts;
@@ -733,9 +822,21 @@ if (window.location.pathname.endsWith(dashboard)){
     }
 }
 
+// CONTRACT LISTENERS
+if (document.querySelector('btn-donate')){
+    document.querySelector('btn-donate').onclick = donate;
+    console.log("CONTRACT LISTENERS RUNNING..")
+}
 
 
 // LOGIN LISTENERS
 if (document.querySelector('#btn-login')){
     document.querySelector('#btn-login').onclick = login;
+    console.log("Logged in Listener working")
 }
+
+// LOGIN LISTENERS
+if (document.querySelector('#btn-logout')){
+    document.querySelector('#btn-logout').onclick = logOut;
+}
+

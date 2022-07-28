@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <meta name="author" content="Mark Otto, Jacob Thornton, and Bootstrap contributors">
+    <meta name="generator" content="Hugo 0.87.0">
+
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p"
+        crossorigin="anonymous"></script>
+    <script src="https://unpkg.com/moralis/dist/moralis.js"></script>
+    
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+    <link rel="canonical" href="https://getbootstrap.com/docs/5.1/examples/dashboard/">
+    <!-- <link href="css/bootstrap.min.css" rel="stylesheet">
+    <link href="dashboard.css" rel="stylesheet">
+    <link href="dex-style.css" rel="stylesheet">
+    <link href="style.css" rel="stylesheet"> -->
+
+    <script src="https://cdn.jsdelivr.net/npm/web3@latest/dist/web3.min.js"></script>
+    <script src="https://unpkg.com/moralis/dist/moralis.js"></script>
+    <title>Table Practice Page</title>
+</head>
+<body>
+    <div>
+        <div id="transactionsSection">
+            <div class="jumbotron jumbotron-fluid">
+              <div class="container">
+                <h2>Transactions</h2>
+                <p>Choose the chain you wish to search for your transactions, then press 'Get Transaction' and we will return them for you here</p>
+                <p>Be aware that the transaction and the block links will only work if your transactions were on the rinkeby chain. As an exercise, see if you can make the base url for the transactions/block dynamic, meaning that the url will update regardless of whether you select a different chain.</p>
+              </div>
+            </div>
+            <div class="container">
+              <div class="col-md-6 offset-md-3 my-3 container">
+                <select id="transactions-chain" class="form-select">
+                   <option value="" selected>Which chain? (default is "eth")</option>
+                  <option value="eth">Ethereum Mainnet</option>
+                  <option value="ropsten">Ropsten</option>
+                  <option value="rinkeby">Rinkeby</option>
+                  <option value="goerli">Goerli </option>
+                  <option value="kovan">Kovan </option>
+                  <option value="bsc">Binance Smart Chain (main)</option>
+                  <option value="bsc testnet">Binance Smart Chain (test)</option>
+                  <option value="matic">Polygon (Matic) Mainnet</option>
+                  <option value="mumbai">Mumbai (Matic Testnet)</option>
+                </select>
+                <div class="input-group">
+                  <input type="text" class="form-control" placeholder="Address (required)" id="getTransactions-address">
+                  <div class="input-group-append">
+                    <button class="btn btn-outline-secondary" type="button" data-address="#getTransactions-address" id="getAddress-getTransactions">Get My Address</button>
+                  </div>
+                </div>
+                <div class="input-group">
+                  <div class="input-group-prepend">
+                    <span class="input-group-text" id="">From Date (optional)</span>
+                  </div>
+                  <input type="date" class="form-control" id="getTransactions-from_date">
+                </div>
+                <div class="input-group">
+                  <div class="input-group-prepend">
+                    <span class="input-group-text" id="">To Date (optional)</span>
+                  </div>
+                  <input type="date" class="form-control" placeholder="To Date (optional)" id="getTransactions-to_date">
+                </div>
+                <input type="text" class="form-control" placeholder="From Block (optional)" id="getTransactions-from_block">
+                <input type="text" class="form-control" placeholder="To Block (optional)" id="getTransactions-to_block">
+                <input type="text" class="form-control" placeholder="Offset (optional)" id="getTransactions-offset">
+                <input type="text" class="form-control" placeholder="Limit (optional)" id="getTransactions-limit">
+              </div>
+              
+              <div class="the-buttons my-3">
+                <button class="btn btn-primary col-md-4 mb-1" id="btn-get-transactions">Get Transactions</button>
+                <button class="btn btn-primary col-md-4 mb-1 clearButton" name="tableOfTransactions">Clear
+                  Transactions</button>
+              </div>
+              <div id="tableOfTransactions" class="table-responsive"></div>
+            </div>
+          </div>
+    </div>
+</body>
+</html>
+
+
+
+  <!-- <table>
+    <thead>
+        <tr>
+            <th></th>
+            <th></th>
+            <th></th>
+            <th></th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+
+    </tbody>
+</table> -->

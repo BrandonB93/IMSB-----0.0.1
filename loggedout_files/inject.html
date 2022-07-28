@@ -1,0 +1,487 @@
+<!DOCTYPE html>
+<!-- saved from url=(0078)chrome-extension://mhbcpbdapglmecjmjbdfpelifeoonbpd/inject.html?protocol=http: -->
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8"><title>Whaletail</title><style>html, body {
+  background-color: rgba(0,0,0,0)
+}</style><link rel="stylesheet" href="./all.css" integrity="sha384-hWVjflwFxL6sNzntih27bfxkr27PmbbK/iSvJ+a4+0owXq79v+lsFkW54bOGbiDQ" crossorigin="anonymous"><link rel="stylesheet" media="print" href="./css"><style type="text/css">.Button__appButton___PQA1l {
+  text-decoration: none;
+  display: block;
+  padding: 10px 20px;
+  position: relative;
+  cursor: pointer;
+  color: #53c2f9;
+  border-color: #53c2f9;
+  border: 1px solid;
+  -webkit-box-shadow: none;
+          box-shadow: none;
+}
+
+.Button__appButton___PQA1l:hover {
+  color: #fff;
+  background: #53c2f9;
+  -webkit-box-shadow: none;
+          box-shadow: none;
+  cursor: pointer;
+}
+</style><style type="text/css">html * {
+  font-family: "Lato", "sans-serif", "Helvetica Neue", "Segoe UI", "Helvetica",
+    "Arial";
+}
+
+.App__normal___gNj-B {
+  width: 100%;
+  height: 100%;
+  background: #fff;
+  margin: 10px 0 10px 0;
+  position: relative;
+  -webkit-box-shadow: 0 1px 5px 0 rgba(26, 26, 26, 0.05),
+    0 1px 5px 0 rgba(0, 0, 0, 0.05);
+          box-shadow: 0 1px 5px 0 rgba(26, 26, 26, 0.05),
+    0 1px 5px 0 rgba(0, 0, 0, 0.05);
+}
+
+.App__normal___gNj-B input::-webkit-input-placeholder {
+  font-style: italic;
+  font-weight: 300;
+  color: #59c3f7;
+}
+
+.App__normal___gNj-B input::-moz-placeholder {
+  font-style: italic;
+  font-weight: 300;
+  color: #59c3f7;
+}
+
+.App__normal___gNj-B input::input-placeholder {
+  font-style: italic;
+  font-weight: 300;
+  color: #59c3f7;
+}
+
+.App__normal___gNj-B h1 {
+  margin: 10px 0px 35px 0px;
+  /* position: absolute;
+  top: -210px; */
+  width: 100%;
+  line-height: 30px;
+  font-size: 50px;
+  font-weight: 150;
+  text-align: center;
+  color: rgba(83, 194, 249, 1);
+  -webkit-text-rendering: optimizeLegibility;
+  -moz-text-rendering: optimizeLegibility;
+  -ms-text-rendering: optimizeLegibility;
+  text-rendering: optimizeLegibility;
+}
+
+.App__menu___MlfaV {
+  background: #fff;
+  overflow: hidden;
+  /* height: 350px; */
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-flex: 1;
+      -ms-flex: 1;
+          flex: 1;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  /* justify-content: center; */
+  /* padding: 50px 0 ; */
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  position: relative;
+  /* box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.2),
+  inset 0 10px 50px 0 rgba(0, 0, 0, 0.1); */
+}
+
+.App__inFrame___vBsZ9 {
+  height: 100%;
+}
+
+.App__close-button___12j1c {
+  /* transform: rotate(90deg); */
+  /* writing-mode: vertical-lr; */
+  /* text-orientation: upright; */
+  /* transform-origin: left top 0; */
+  position: fixed;
+  left: 10px;
+  top: 5px;
+  /* width: 4em; */
+  /* margin-top: -2.5em; */
+  /* background-color: #59c3f7;  */
+  /* border: 1px solid lightblue; */
+  /* color: #f75959; */
+  color: #a71e1e;
+  /* padding: 5px 5px; */
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 25px;
+  font-weight: 300px;
+  cursor: pointer;
+}
+
+.App__close-button___12j1c:hover {
+  text-shadow: 1px 1px 8px;
+}
+
+.App__icon-button___2IIK9 {
+  cursor: pointer;
+}
+
+.App__icon-button___2IIK9:hover {
+  text-shadow: 1px 1px 8px;
+}
+
+.App__move___TihcO {
+  cursor: ns-resize;
+  pointer-events: auto !important;
+}
+
+.App__pointer___ljgYD {
+  cursor: pointer;
+  pointer-events: auto !important;
+}
+
+.App__contributeAddressInput___12YVq {
+  width: 70%;
+  border: 1px solid #59c3f7;
+  background-color: #f9f9f9;
+  font-weight: bold;
+  font-size: 15px;
+  color: #59c3f7;
+  overflow: auto;
+  padding: 5px;
+}
+
+.App__sortableItemCompleted___IfGnH {
+  color: #d9d9d9 !important;
+  text-decoration: line-through;
+}
+
+.App__sortableItemPending___vxkoY {
+  font-size: 18px;
+  color: black;
+}
+
+.App__sortableItemContainer___1Dw1x {
+  padding: 0px !important;
+  margin: 5px !important;
+}
+</style><style type="text/css">.TradeItem__normal___1NV1f .TradeItem__toggle___VIx6Z {
+  text-align: center;
+  width: 40px;
+  /* auto, since non-WebKit browsers doesn't support input styling */
+  height: auto;
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  margin: auto 0;
+  border: none; /* Mobile Safari */
+  -webkit-appearance: none;
+  -moz-appearance: none;
+}
+
+/* .normal .toggle:after {
+  content: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" viewBox="-10 -18 100 135"><circle cx="50" cy="50" r="50" fill="none" stroke="#ededed" stroke-width="3"/></svg>');
+}
+
+.normal .toggle:checked:after {
+  content: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" viewBox="-10 -18 100 135"><circle cx="50" cy="50" r="50" fill="none" stroke="#59c3f7" stroke-width="3"/><path fill="#59c3f7" d="M72 25L42 71 27 56l-4 4 20 20 34-52z"/></svg>');
+} */
+
+.TradeItem__normal___1NV1f label {
+  cursor: pointer;
+  white-space: pre-line;
+  word-break: break-word;
+  padding: 15px 45px 15px 0px;
+  display: block;
+  line-height: 1.2;
+  -webkit-transition: color 0.4s;
+  transition: color 0.4s;
+}
+
+.TradeItem__normal___1NV1f .TradeItem__destroy___3Oynh {
+  display: none;
+  position: absolute;
+  top: 0;
+  right: 10px;
+  bottom: 0;
+  margin: auto 0;
+  font-size: 30px;
+  color: #cc9a9a;
+  -webkit-transition: color 0.2s ease-out;
+  transition: color 0.2s ease-out;
+}
+
+.TradeItem__normal___1NV1f .TradeItem__destroy___3Oynh:hover {
+  color: #c73b3f;
+}
+
+.TradeItem__normal___1NV1f .TradeItem__destroy___3Oynh:after {
+  /* content: 'x'; */
+  font-weight: bolder;
+}
+
+.TradeItem__normal___1NV1f:hover .TradeItem__destroy___3Oynh {
+  display: block;
+}
+
+.TradeItem__normal___1NV1f .TradeItem__edit___3YgZE {
+  display: none;
+}
+
+.TradeItem__editing___17rQa {
+  border-bottom: none;
+  padding: 0;
+}
+
+.TradeItem__editing___17rQa:last-child {
+  margin-bottom: -1px;
+}
+
+.TradeItem__editing___17rQa .TradeItem__edit___3YgZE {
+  display: block;
+  width: 506px;
+  padding: 13px 17px 12px 17px;
+  margin: 0 0 0 43px;
+}
+
+.TradeItem__view___1L12u {
+  padding: 0px 0px 0px 0px;
+  margin: 5px 0px;
+  background-color: rgba(83, 194, 249, 0.05);
+}
+
+.TradeItem__completed___1uMe2 label {
+  color: #d9d9d9;
+  text-decoration: line-through;
+}
+
+/*
+  Hack to remove background from Mobile Safari.
+  Can't use it globally since it destroys checkboxes in Firefox
+*/
+@media screen and (-webkit-min-device-pixel-ratio: 0) {
+  .TradeItem__normal___1NV1f .TradeItem__toggle___VIx6Z {
+    background: none;
+  }
+
+  .TradeItem__normal___1NV1f .TradeItem__toggle___VIx6Z {
+    height: 40px;
+  }
+}
+
+.TradeItem__itemContainer___b2xKz {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -webkit-box-pack: start;
+      -ms-flex-pack: start;
+          justify-content: flex-start;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  margin-left: 55px;
+  font-size: 24px;
+  width: 80%;
+}
+
+.TradeItem__scenarioLabel___12w9D {
+  text-align: center;
+  color: #59c3f7;
+  font-size: 12px;
+  margin-right: 10px;
+}
+
+.TradeItem__scenarioLabelInner___3COrO {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-flex: 1;
+      -ms-flex: 1;
+          flex: 1;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+</style><style type="text/css">.ListFooter__listFooter___AeMTz {
+  text-align: center;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-flex: 1;
+      -ms-flex: 1;
+          flex: 1;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -webkit-box-pack: start;
+      -ms-flex-pack: start;
+          justify-content: flex-start;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  overflow: hidden;
+}
+
+.ListFooter__todoCount___1TNU7 {
+  margin-left: 10px;
+  text-align: left;
+  font-size: 16px !important;
+}
+
+.ListFooter__todoCount___1TNU7 strong {
+  font-weight: 300;
+}
+</style><style type="text/css">.List__main___38G8S {
+  position: relative;
+  z-index: 2;
+  /* border-top: 1px solid #59c3f7; */
+  /* top: 50px; */
+}
+
+.List__itemsList___2Il3m {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.List__itemsList___2Il3m li {
+  position: relative;
+}
+
+.List__itemsList___2Il3m li:last-child {
+  border-bottom: none;
+}
+
+.List__itemsList___2Il3m li.List__editing___2IpAy {
+  border-bottom: none;
+  padding: 0;
+}
+
+.List__itemsList___2Il3m li.List__editing___2IpAy .List__edit___24kE6 {
+  display: block;
+  width: 506px;
+  padding: 13px 17px 12px 17px;
+  margin: 0 0 0 43px;
+}
+
+.List__itemsList___2Il3m li.List__editing___2IpAy .List__view___3lrGx {
+  display: none;
+}
+
+.List__itemsList___2Il3m li .List__toggle___2blME {
+  text-align: center;
+  width: 40px;
+  /* auto, since non-WebKit browsers doesn't support input styling */
+  height: auto;
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  margin: auto 0;
+  border: none; /* Mobile Safari */
+  -webkit-appearance: none;
+  -moz-appearance: none;
+}
+
+.List__toggleAll___DcuwI {
+  /* position: absolute;
+  top: -5px;
+  left: -15px; 
+  width: 60px;
+  height: 34px;
+  margin: 15px; */
+  margin-left: 15px;
+  text-align: center;
+  border: none; /* Mobile Safari */ 
+}
+
+.List__toggleAll___DcuwI:before {
+  content: '\276F';
+  font-size: 22px;
+  color: #e6e6e6;
+}
+
+.List__toggleAll___DcuwI:checked:before {
+  color: #59c3f7;
+}
+
+/*
+  Hack to remove background from Mobile Safari.
+  Can't use it globally since it destroys checkboxes in Firefox
+*/
+@media screen and (-webkit-min-device-pixel-ratio:0) {
+  .List__toggleAll___DcuwI,
+  .List__itemsList___2Il3m li .List__toggle___2blME {
+    background: none;
+  }
+
+  .List__itemsList___2Il3m li .List__toggle___2blME {
+    height: 40px;
+  }
+
+  .List__toggleAll___DcuwI {
+    -webkit-transform: rotate(90deg);
+            transform: rotate(90deg);
+    -webkit-appearance: none;
+    -moz-appearance: none;
+  }
+}
+</style><style data-emotion=""></style><style type="text/css">html,
+body {
+  padding: 0;
+  background: rgba(255, 255, 255, 0.719);
+}
+
+button {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  background: none;
+  font-size: 100%;
+  vertical-align: baseline;
+  font-family: inherit;
+  font-weight: inherit;
+  color: inherit;
+  -webkit-appearance: none;
+     -moz-appearance: none;
+          appearance: none;
+  font-smoothing: antialiased;
+}
+
+body {
+  font: 14px;
+  line-height: 1.4em;
+  background: #f5f5f5;
+  color: #4d4d4d;
+  /* min-width: 230px; */
+  max-width: 550px;
+  margin: auto !important;
+  -webkit-font-smoothing: antialiased;
+  -moz-font-smoothing: antialiased;
+  -ms-font-smoothing: antialiased;
+  font-smoothing: antialiased;
+  font-weight: 300;
+}
+
+button,
+input[type='checkbox'] {
+  outline: none;
+}
+</style></head><body><div id="root"><div class="App__normal___gNj-B"><header><div style="display: flex; flex-direction: row; justify-content: flex-end; align-items: center;"></div><h1><b>Whale<img src="chrome-extension://mhbcpbdapglmecjmjbdfpelifeoonbpd/img/logo.png" alt="logo" style="height: 1em;">ail</b></h1></header><div class="App__menu___MlfaV"><button type="button" class="Button__appButton___PQA1l" style="width: 70%; font-size: 25px; margin: 5px; font-weight: bold;"><i class="fa fa-chart-line" style="position: absolute; left: 20px; line-height: inherit; font-size: 30px;"></i>New Trade</button><button type="button" class="Button__appButton___PQA1l" style="width: 70%; font-size: 25px; margin: 5px; font-weight: bold;"><i class="fa fa-list" style="position: absolute; left: 20px; line-height: inherit; font-size: 30px;"></i>Trades List</button><button type="button" class="Button__appButton___PQA1l" style="width: 70%; font-size: 25px; margin: 5px; font-weight: bold;"><i class="fa fa-chess" style="position: absolute; left: 20px; line-height: inherit; font-size: 30px;"></i>New Strategy</button><button type="button" class="Button__appButton___PQA1l" style="width: 70%; font-size: 25px; margin: 5px; font-weight: bold;"><i class="fa fa-chess-board" style="position: absolute; left: 20px; line-height: inherit; font-size: 30px;"></i>Strategies List</button><button type="button" class="Button__appButton___PQA1l" style="width: 70%; font-size: 25px; margin: 5px; font-weight: bold;"><i class="fab fa-btc" style="position: absolute; left: 20px; line-height: inherit; font-size: 30px;"></i>Donate</button><button type="button" class="Button__appButton___PQA1l" style="width: 70%; font-size: 25px; margin: 5px; font-weight: bold;"><i class="fa fa-book" style="position: absolute; left: 20px; line-height: inherit; font-size: 30px;"></i>Readme</button></div></div></div><script src="chrome-extension://mhbcpbdapglmecjmjbdfpelifeoonbpd/libraries/google-analytics-bundle.js"></script><script src="chrome-extension://mhbcpbdapglmecjmjbdfpelifeoonbpd/js/whaletail.bundle.js"></script></body></html>
